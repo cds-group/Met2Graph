@@ -1,0 +1,26 @@
+Package: Met2Graph
+Title: FROM METABOLIC MODEL TO GRAPHS
+Version: 0.0.0.1
+Authors@R: 
+    person(given = "Ilaria",
+           family = "Granata",
+           role = c("aut", "cre"),
+           email = "ilaria.granata@icar.cnr.it",
+           comment = c(ORCID = "0000-0002-3450-4667"))
+Description: Create metabolites-, reactions-, enzymes-based graphs starting from a genome-scale metabolic model.
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.5.0), igraph
+RoxygenNote: 7.1.2
+Suggests: 
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Imports: rmarkdown, reshape2, igraph, tidyr, dplyr, Hmisc, sybilSBML, stringr,
+        stringi
+NeedsCompilation: no
+Packaged: 2020-05-27 07:56:37 UTC; ilariagranata
+Author: Ilaria Granata [aut, cre] (<https://orcid.org/0000-0002-3450-4667>)
+Maintainer: Ilaria Granata <ilaria.granata@icar.cnr.it>
