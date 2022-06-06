@@ -280,7 +280,7 @@ Met2MetGraph <- function(infile, catalyzed, rmMets, recMets_list, exprDir, delim
   }
   #expression values
   if (is.null(exprDir)){
-    fileNameout <- file.pathfile.path(subdir, paste0(mod_name,"_metabolites_based_graph.tsv"))
+    fileNameout <- file.path(subdir, paste0(mod_name,"_metabolites_based_graph.tsv"))
     write.table(inpGraph, fileNameout, sep="\t")
     graphMet <- graph_from_data_frame(inpGraph, directed=directed)
     fileNameout <- file.path(subdir, paste0(mod_name,"_metabolites_based_graph", '.',outFormat))
