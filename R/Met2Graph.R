@@ -278,7 +278,7 @@ Met2MetGraph <- function(infile, catalyzed, rmMets, recMets_list, exprDir, delim
     inpGraph = inpGraph[which(inpGraph$from  %nin% recMets[,2]), ]
     inpGraph = inpGraph[which(inpGraph$to  %nin% recMets[,2]), ]
   }
-  #expression values
+  #write output
   if (is.null(exprDir)){
     fileNameout <- file.path(subdir, paste0(mod_name,"_metabolites_based_graph.tsv"))
     write.table(inpGraph, fileNameout, sep="\t")
