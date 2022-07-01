@@ -214,6 +214,5 @@ out <- MetExtract(system.file("extdata", "kidney.xml", package = "Met2Graph"))
 ```
 
 # Citation
-If you use the Met2Graph package, please cite the following paper
-Authors, TumorMet: A repository of tumor metabolic networks derived from context-specific Genome-scale Metabolic Models, Scientific Data, submitted (2022)
-
+If you use the Met2Graph package, please cite the following paper:
+Granata, I., Manipur, I., Giordano, M., Maddalena, L., Guarracino, M.R. TumorMet: A repository of tumor metabolic networks derived from context-specific Genome-Scale Metabolic Models, Scientific Data, submitted (2022)
