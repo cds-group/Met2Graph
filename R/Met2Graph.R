@@ -661,11 +661,19 @@ Met2EnzGraph <- function(infile, rmMets, recMets_list, outDir, outFormat, direct
   #extract GPR
   print("extracting gpr rules")
   print ("automatic extraction of GPR from the model")
-  gpr=data.frame(Rxn=mod@react_id,GPR=mod@gpr)
-  if (all(sapply(gpr[,2], function(x)all(x==""))) == TRUE)  {
-  print("gpr values are missing in the model, those extracted from human HMR2 will be used")
-  gpr=read.delim(system.file("extdata", "gpr.txt", package = "Met2Graph"),sep="\t")
-}
+
+  if (length(mod@gpr) == 0){
+    print("gpr values are missing in the model, those extracted from human HMR2 will be used")
+    gpr = read.delim(system.file("extdata", "gpr.txt", package = "Met2Graph"),
+                     sep = "\t")
+  }else{
+    gpr=data.frame(Rxn=mod@react_id,GPR=mod@gpr)
+    if (all(sapply(gpr[,2], function(x)all(x==""))) == TRUE)  {
+      print("gpr values are missing in the model, those extracted from human HMR2 will be used")
+      gpr=read.delim(system.file("extdata", "gpr.txt", package = "Met2Graph"),sep="\t")
+    }
+  }
+  
   gpr[,2]=as.character(gpr[,2])
   gpr[,2]=gsub("[()]", "", gpr[,2])
   if (add_rev_rxn==TRUE){
